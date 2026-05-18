@@ -20,8 +20,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const toggle = (e?: { clientX: number; clientY: number }) => {
     const next: Theme = theme === "dark" ? "light" : "dark";
     // View Transitions API for a circular reveal animation
-    // @ts-expect-error – experimental API
-    const startViewTransition = document.startViewTransition?.bind(document);
+    const startViewTransition = (document as unknown as { startViewTransition?: (cb: () => void) => { ready: Promise<void> } }).startViewTransition?.bind(document);
     if (!startViewTransition || !e) {
       setTheme(next);
       return;
