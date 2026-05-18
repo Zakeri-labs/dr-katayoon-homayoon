@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { LanguageProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/lib/theme";
+import { IntroOverlay } from "@/components/site/IntroOverlay";
 
 function NotFoundComponent() {
   return (
@@ -118,6 +119,7 @@ function RootComponent() {
       <ThemeProvider>
         <LanguageProvider>
           <Outlet />
+          <IntroOverlay />
         </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>
