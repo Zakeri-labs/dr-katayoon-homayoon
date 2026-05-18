@@ -18,6 +18,20 @@ export const dict = {
   "nav.booking": { en: "Booking", fa: "نوبت‌گیری", ar: "الحجز" },
   "nav.book": { en: "Book consultation", fa: "رزرو مشاوره", ar: "احجز استشارة" },
 
+  // Intro overlay
+  "intro.tag": { en: "Welcome", fa: "خوش آمدید", ar: "أهلاً بك" },
+  "intro.name": { en: "Dr. Katayoon Homayoon", fa: "دکتر کتایون همایون", ar: "د. كتايون همايون" },
+  "intro.role": { en: "Specialist Gastroenterologist & Hepatologist · Dubai", fa: "متخصص گوارش و کبد · دبی", ar: "استشارية أمراض الجهاز الهضمي والكبد · دبي" },
+  "intro.bio": {
+    en: "Modern medicine, human care. A calm, premium experience for digestive and liver health — in English, Persian or Arabic.",
+    fa: "پزشکی مدرن، مراقبتی انسانی. تجربه‌ای آرام و ویژه برای سلامت گوارش و کبد — به انگلیسی، فارسی یا عربی.",
+    ar: "طب حديث ورعاية إنسانية. تجربة هادئة وراقية لصحة الجهاز الهضمي والكبد — بالإنجليزية أو الفارسية أو العربية.",
+  },
+  "intro.begin": { en: "Begin", fa: "شروع", ar: "ابدأ" },
+  "intro.explore": { en: "Explore", fa: "کاوش", ar: "استكشف" },
+  "intro.pill": { en: "Meet Dr. Katayoon", fa: "آشنایی با دکتر کتایون", ar: "تعرّف على د. كتايون" },
+  "intro.close": { en: "Close", fa: "بستن", ar: "إغلاق" },
+
   // Hero
   "hero.eyebrow": {
     en: "Gastroenterology · Hepatology · Dubai",
