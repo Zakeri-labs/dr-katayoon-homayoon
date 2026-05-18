@@ -1,28 +1,28 @@
 import { Reveal } from "./Reveal";
-
-const facts = [
-  { k: "11+", v: "Years gastroenterology" },
-  { k: "16+", v: "Years internal medicine" },
-  { k: "3", v: "Languages — EN · FA · AR" },
-  { k: "Dubai", v: "London Hospital affiliation" },
-];
+import { useT } from "@/lib/i18n";
 
 export function About() {
+  const { t } = useT();
+  const facts = [
+    { k: t("about.f1k"), v: t("about.f1v") },
+    { k: t("about.f2k"), v: t("about.f2v") },
+    { k: t("about.f3k"), v: t("about.f3v") },
+    { k: t("about.f4k"), v: t("about.f4v") },
+  ];
   return (
     <section id="about" className="relative px-5 py-32 md:py-44">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-16 max-w-3xl" as="div">
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">About</p>
+          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">{t("about.kicker")}</p>
           <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-[1.05] text-balance">
-            A specialist who treats the person,
-            <span className="italic text-bronze"> not just the diagnosis.</span>
+            {t("about.title1")}
+            <span className="italic text-bronze">{t("about.title2")}</span>
           </h2>
         </Reveal>
 
         <div className="grid gap-16 md:grid-cols-[1.1fr_1fr] md:gap-20">
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-champagne shadow-luxe">
-              {/* Editorial portrait stand-in built with SVG */}
               <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full">
                 <defs>
                   <radialGradient id="g1" cx="50%" cy="40%" r="70%">
@@ -51,29 +51,17 @@ export function About() {
 
           <div>
             <Reveal>
-              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-                A specialist gastroenterologist and hepatologist trained at Shiraz
-                University of Medical Sciences, Dr. Katayoon brings more than a
-                decade of advanced digestive expertise to her practice at
-                Dubai London Hospital — combining quiet precision with deeply
-                human care.
-              </p>
+              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">{t("about.p1")}</p>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-                Her work focuses on IBS, fatty liver, reflux, hepatitis,
-                inflammatory bowel disease and preventive screening — supported
-                by advanced endoscopy, colonoscopy and elastography.
-              </p>
+              <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">{t("about.p2")}</p>
             </Reveal>
 
             <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-border">
               {facts.map((f, i) => (
-                <Reveal key={f.v} delay={i * 0.08} className="bg-background p-6">
+                <Reveal key={i} delay={i * 0.08} className="bg-background p-6">
                   <p className="font-display text-3xl text-foreground">{f.k}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {f.v}
-                  </p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">{f.v}</p>
                 </Reveal>
               ))}
             </div>
