@@ -11,7 +11,7 @@ export function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-10 text-sm md:grid-cols-3">
           <FooterCol title={t("ft.practice")} items={[t("nav.about"), t("nav.expertise"), t("nav.programs"), t("nav.insights")]} />
-          <FooterCol title={t("ft.contact")} items={[t("bk.wa"), t("bk.call"), t("bk.email" as never) ?? "Email", t("loc.dir")]} />
+          <FooterCol title={t("ft.contact")} items={[t("bk.wa"), t("bk.call"), "Email", t("loc.dir")]} />
           <FooterCol title={t("ft.languages")} items={["English", "فارسی", "العربية"]} />
         </div>
       </div>
