@@ -1,21 +1,21 @@
 import { Reveal } from "./Reveal";
-
-const steps = [
-  { n: "01", t: "Listen", d: "A calm, unhurried conversation. We understand your story before suggesting anything clinical." },
-  { n: "02", t: "Investigate", d: "Advanced diagnostics — endoscopy, colonoscopy, FibroScan, microbiome and metabolic panels — chosen with intent." },
-  { n: "03", t: "Design", d: "A personalised, written plan in your language: English, Persian or Arabic." },
-  { n: "04", t: "Accompany", d: "Ongoing care, follow-ups and direct messaging — so you never feel alone in the process." },
-];
+import { useT, type TKey } from "@/lib/i18n";
 
 export function Experience() {
+  const { t } = useT();
+  const steps = [1, 2, 3, 4].map((n) => ({
+    n: String(n).padStart(2, "0"),
+    t: t(`xp.${n}.t` as TKey),
+    d: t(`xp.${n}.d` as TKey),
+  }));
   return (
     <section className="relative px-5 py-32 md:py-44">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-20 max-w-3xl">
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">The Experience</p>
+          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">{t("xp.kicker")}</p>
           <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-[1.05] text-balance">
-            A patient journey designed like
-            <span className="italic text-bronze"> a private atelier.</span>
+            {t("xp.title1")}
+            <span className="italic text-bronze">{t("xp.title2")}</span>
           </h2>
         </Reveal>
 
