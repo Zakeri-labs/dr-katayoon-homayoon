@@ -16,14 +16,34 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -left-40 top-20 h-[60vh] w-[60vh] rounded-full opacity-70 blur-3xl"
       >
-        <div className="h-full w-full rounded-full bg-gold" />
+        <motion.div
+          className="h-full w-full rounded-full bg-gold"
+          animate={{ x: [0, 80, -40, 0], y: [0, -60, 40, 0], scale: [1, 1.15, 0.95, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
       </motion.div>
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -120]) }}
         aria-hidden
         className="pointer-events-none absolute -right-32 bottom-0 h-[55vh] w-[55vh] rounded-full opacity-50 blur-3xl"
       >
-        <div className="h-full w-full rounded-full" style={{ background: "oklch(0.88 0.06 60)" }} />
+        <motion.div
+          className="h-full w-full rounded-full"
+          style={{ background: "oklch(0.88 0.06 60)" }}
+          animate={{ x: [0, -70, 50, 0], y: [0, 50, -40, 0], scale: [1, 0.9, 1.1, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/3 h-[40vh] w-[40vh] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+      >
+        <motion.div
+          className="h-full w-full rounded-full"
+          style={{ background: "oklch(0.82 0.08 70)" }}
+          animate={{ x: [0, 60, -60, 0], y: [0, -40, 60, 0], scale: [1, 1.2, 0.9, 1] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
+        />
       </motion.div>
 
       <motion.div
