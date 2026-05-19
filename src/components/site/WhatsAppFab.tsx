@@ -1,10 +1,10 @@
 import { MessageCircle } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 
 const WHATSAPP = "https://wa.me/971000000000";
 
 export function WhatsAppFab() {
-  const { t } = useI18n();
+  const { t } = useT();
   const label = t("hero.whatsapp");
 
   return (
