@@ -332,3 +332,13 @@ export function useT() {
   if (!ctx) throw new Error("useT outside LanguageProvider");
   return ctx;
 }
+
+const FA_DIGITS = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+const AR_DIGITS = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+export function localizeDigits(input: string | number, lang: Lang): string {
+  const str = String(input);
+  if (lang === "fa") return str.replace(/[0-9]/g, (d) => FA_DIGITS[+d]);
+  if (lang === "ar") return str.replace(/[0-9]/g, (d) => AR_DIGITS[+d]);
+  return str;
+}
+
