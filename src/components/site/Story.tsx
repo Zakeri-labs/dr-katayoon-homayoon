@@ -1,66 +1,19 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Reveal } from "./Reveal";
 import { useT } from "@/lib/i18n";
 import liverVideo from "../../../public/videos/liver.mp4.asset.json";
 import digestVideo from "../../../public/videos/digest.mp4.asset.json";
 
 function OrganVideo({ src, label }: { src: string; label: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let direction: 1 | -1 = 1;
-    let rafId: number;
-    let lastTime = performance.now();
-    let running = true;
-
-    const tick = (now: number) => {
-      if (!running) return;
-      const dt = Math.min((now - lastTime) / 1000, 0.1);
-      lastTime = now;
-      const duration = video.duration;
-      if (duration && !isNaN(duration) && duration > 0) {
-        let next = video.currentTime + dt * direction;
-        if (next >= duration) {
-          next = duration - 0.001;
-          direction = -1;
-        } else if (next <= 0) {
-          next = 0;
-          direction = 1;
-        }
-        try {
-          video.currentTime = next;
-        } catch {}
-      }
-      rafId = requestAnimationFrame(tick);
-    };
-
-    const start = () => {
-      video.pause();
-      lastTime = performance.now();
-      rafId = requestAnimationFrame(tick);
-    };
-
-    if (video.readyState >= 1) start();
-    else video.addEventListener("loadedmetadata", start, { once: true });
-
-    return () => {
-      running = false;
-      cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
     <div className="relative h-full w-full overflow-hidden rounded-full">
       <video
-        ref={videoRef}
         src={src}
+        autoPlay
+        loop
         muted
         playsInline
-        preload="auto"
         aria-label={label}
         className="h-full w-full object-cover"
         style={{
