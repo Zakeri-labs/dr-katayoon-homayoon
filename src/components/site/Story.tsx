@@ -15,21 +15,25 @@ function OrganVideo({ src, label }: { src: string; label: string }) {
     let direction: 1 | -1 = 1;
     let rafId: number;
     let lastTime = performance.now();
+    let running = true;
 
     const tick = (now: number) => {
-      const dt = (now - lastTime) / 1000;
+      if (!running) return;
+      const dt = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
       const duration = video.duration;
-      if (duration && !isNaN(duration)) {
+      if (duration && !isNaN(duration) && duration > 0) {
         let next = video.currentTime + dt * direction;
         if (next >= duration) {
-          next = duration;
+          next = duration - 0.001;
           direction = -1;
         } else if (next <= 0) {
           next = 0;
           direction = 1;
         }
-        video.currentTime = next;
+        try {
+          video.currentTime = next;
+        } catch {}
       }
       rafId = requestAnimationFrame(tick);
     };
@@ -44,6 +48,7 @@ function OrganVideo({ src, label }: { src: string; label: string }) {
     else video.addEventListener("loadedmetadata", start, { once: true });
 
     return () => {
+      running = false;
       cancelAnimationFrame(rafId);
     };
   }, []);
