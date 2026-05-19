@@ -137,12 +137,12 @@
   /* Persian typography */
   html[lang="fa"] body { font-family: var(--font-fa); }
   html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4, html[lang="fa"] .font-display {
-    font-family: var(--font-fa-display); font-weight: 400; letter-spacing: -0.01em;
+    font-family: var(--font-fa-display); font-weight: 500; letter-spacing: 0; line-height: 1.15;
   }
   /* Arabic typography */
   html[lang="ar"] body { font-family: var(--font-ar); }
   html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] .font-display {
-    font-family: var(--font-ar-display); font-weight: 400; letter-spacing: 0;
+    font-family: var(--font-ar-display); font-weight: 400; letter-spacing: 0; line-height: 1.2;
   }
   /* RTL adjustments */
   html[dir="rtl"] .tracking-\[0\.3em\],
