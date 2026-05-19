@@ -121,6 +121,7 @@ function RootComponent() {
         <LanguageProvider>
           <Outlet />
           <IntroOverlay />
+          <WhatsAppFab />
         </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>
