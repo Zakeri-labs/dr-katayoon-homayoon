@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { useT } from "@/lib/i18n";
+import portrait from "@/assets/dr-katayoon-portrait.jpg";
 
 export function About() {
   const { t } = useT();
