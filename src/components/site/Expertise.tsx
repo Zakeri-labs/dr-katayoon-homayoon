@@ -1,8 +1,8 @@
 import { Reveal } from "./Reveal";
-import { useT, type TKey } from "@/lib/i18n";
+import { useT, localizeDigits, type TKey } from "@/lib/i18n";
 
 export function Expertise() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const keys: TKey[] = ["exp.c1","exp.c2","exp.c3","exp.c4","exp.c5","exp.c6","exp.c7","exp.c8","exp.c9","exp.c10","exp.c11","exp.c12"];
   return (
     <section id="expertise" className="relative px-5 py-32 md:py-44">
