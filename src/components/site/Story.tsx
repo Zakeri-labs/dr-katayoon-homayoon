@@ -7,19 +7,16 @@ import digestVideo from "../../../public/videos/digest.mp4.asset.json";
 
 function OrganVideo({ src, label }: { src: string; label: string }) {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-full">
+    <div className="relative h-full w-full overflow-hidden rounded-2xl bg-dark">
       <video
         src={src}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         aria-label={label}
         className="h-full w-full object-cover"
-        style={{
-          maskImage: "radial-gradient(circle at center, black 55%, transparent 78%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 55%, transparent 78%)",
-        }}
       />
     </div>
   );
@@ -59,9 +56,9 @@ export function Story() {
         </div>
 
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
-          <motion.div style={{ rotate, scale }} className="relative mx-auto aspect-square w-full max-w-md md:order-2">
+          <div className="relative mx-auto aspect-square w-full max-w-md md:order-2">
             <OrganVideo src={liverVideo.url} label="Liver visualization" />
-          </motion.div>
+          </div>
           <Reveal className="md:order-1">
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.ch2.k")}</p>
             <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.02] text-ivory">
@@ -74,9 +71,9 @@ export function Story() {
         </div>
 
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
-          <motion.div style={{ rotate: useTransform(scrollYProgress, [0, 1], [15, -20]), scale }} className="relative mx-auto aspect-square w-full max-w-md">
+          <div className="relative mx-auto aspect-square w-full max-w-md">
             <OrganVideo src={digestVideo.url} label="Digestion visualization" />
-          </motion.div>
+          </div>
           <Reveal>
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.chD.k")}</p>
             <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.02] text-ivory">
