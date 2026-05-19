@@ -184,13 +184,21 @@
     font-style: normal;
   }
 
-  /* Weight tiers — softer, more elegant than ExtraBold */
-  html[lang="fa"] h1, html[lang="ar"] h1 { font-weight: 700; line-height: 1.5; }
-  html[lang="fa"] h2, html[lang="ar"] h2 { font-weight: 700; line-height: 1.5; }
-  html[lang="fa"] h3, html[lang="ar"] h3 { font-weight: 600; line-height: 1.55; }
-  html[lang="fa"] h4, html[lang="ar"] h4 { font-weight: 600; line-height: 1.6; }
+  /* Weight tiers — use ExtraBold (800) for big display, Bold (700) for smaller */
+  html[lang="fa"] h1, html[lang="ar"] h1 { font-weight: 800; line-height: 1.45; letter-spacing: 0 !important; word-spacing: normal; }
+  html[lang="fa"] h2, html[lang="ar"] h2 { font-weight: 800; line-height: 1.5; letter-spacing: 0 !important; word-spacing: normal; }
+  html[lang="fa"] h3, html[lang="ar"] h3 { font-weight: 700; line-height: 1.55; letter-spacing: 0 !important; }
+  html[lang="fa"] h4, html[lang="ar"] h4 { font-weight: 700; line-height: 1.6; letter-spacing: 0 !important; }
   html[lang="fa"] h1 .italic, html[lang="fa"] h2 .italic,
   html[lang="ar"] h1 .italic, html[lang="ar"] h2 .italic { font-weight: 800; }
+  /* Disable Latin-only OpenType features for Persian/Arabic — they can break Arabic shaping */
+  html[lang="fa"] body, html[lang="ar"] body,
+  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4,
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4,
+  html[lang="fa"] .font-display, html[lang="ar"] .font-display {
+    font-feature-settings: normal;
+    font-variant-ligatures: normal;
+  }
 
   /* .font-display in fa/ar → YekanBakh as well (big section titles, blockquotes, numerals) */
   html[lang="fa"] .font-display, html[lang="fa"] .font-display * {
