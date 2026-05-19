@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { useT, type TKey } from "@/lib/i18n";
+import dubai from "@/assets/dubai-skyline.jpg";
 
 export function Location() {
   const { t } = useT();
