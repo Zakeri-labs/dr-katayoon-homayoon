@@ -56,7 +56,7 @@ export function Story() {
         </div>
 
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
-          <motion.div style={{ rotate, scale }} className="relative mx-auto aspect-square w-full max-w-md md:order-2">
+          <div className="relative mx-auto aspect-square w-full max-w-md md:order-2">
             <OrganVideo src={liverVideo.url} label="Liver visualization" />
           </motion.div>
           <Reveal className="md:order-1">
