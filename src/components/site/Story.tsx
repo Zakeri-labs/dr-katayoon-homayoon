@@ -58,7 +58,7 @@ export function Story() {
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
           <div className="relative mx-auto aspect-square w-full max-w-md md:order-2">
             <OrganVideo src={liverVideo.url} label="Liver visualization" />
-          </motion.div>
+          </div>
           <Reveal className="md:order-1">
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.ch2.k")}</p>
             <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.02] text-ivory">
