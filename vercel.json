@@ -4,6 +4,7 @@
   "outputDirectory": "dist/spa",
   "framework": null,
   "rewrites": [
+    { "source": "/__l5e/:path*", "destination": "https://id-preview--03b91bb9-8819-439a-a123-3cf788262798.lovable.app/__l5e/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
