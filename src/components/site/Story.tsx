@@ -7,19 +7,16 @@ import digestVideo from "../../../public/videos/digest.mp4.asset.json";
 
 function OrganVideo({ src, label }: { src: string; label: string }) {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-full">
+    <div className="relative h-full w-full overflow-hidden rounded-2xl bg-dark">
       <video
         src={src}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         aria-label={label}
         className="h-full w-full object-cover"
-        style={{
-          maskImage: "radial-gradient(circle at center, black 55%, transparent 78%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 55%, transparent 78%)",
-        }}
       />
     </div>
   );
