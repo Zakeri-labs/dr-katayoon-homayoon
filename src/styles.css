@@ -166,16 +166,32 @@
   }
   h1, h2, h3, h4, .font-display { font-family: var(--font-display); font-weight: 300; letter-spacing: -0.02em; }
 
-  /* Persian typography */
+  /* Persian / Arabic typography — YekanBakh tiered weights */
   html[lang="fa"] body { font-family: var(--font-fa); }
-  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4, html[lang="fa"] .font-display {
-    font-family: var(--font-fa-display); font-weight: 800; letter-spacing: 0; line-height: 1.18;
-  }
-  /* Arabic typography */
   html[lang="ar"] body { font-family: var(--font-ar); }
+
+  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4, html[lang="fa"] .font-display,
   html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] .font-display {
-    font-family: var(--font-ar-display); font-weight: 700; letter-spacing: 0; line-height: 1.2;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-style: normal;
   }
+  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4,
+  html[lang="fa"] h1 *, html[lang="fa"] h2 *, html[lang="fa"] h3 *, html[lang="fa"] h4 *,
+  html[lang="fa"] .font-display { font-family: var(--font-fa-display); }
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4,
+  html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *, html[lang="ar"] h4 *,
+  html[lang="ar"] .font-display { font-family: var(--font-ar-display); }
+
+  /* Weight tiers — large display → ExtraBold/Bold, small labels → SemiBold */
+  html[lang="fa"] h1, html[lang="ar"] h1 { font-weight: 800; line-height: 1.35; }
+  html[lang="fa"] h2, html[lang="ar"] h2 { font-weight: 700; line-height: 1.4; }
+  html[lang="fa"] h3, html[lang="ar"] h3 { font-weight: 700; line-height: 1.45; }
+  html[lang="fa"] h4, html[lang="ar"] h4 { font-weight: 600; line-height: 1.5; }
+  html[lang="fa"] .font-display, html[lang="ar"] .font-display { font-weight: 600; }
+  html[lang="fa"] h1 .italic, html[lang="fa"] h2 .italic, html[lang="fa"] h3 .italic,
+  html[lang="ar"] h1 .italic, html[lang="ar"] h2 .italic, html[lang="ar"] h3 .italic { font-weight: 800; }
+
   /* RTL adjustments */
   html[dir="rtl"] .tracking-\[0\.3em\],
   html[dir="rtl"] .tracking-\[0\.25em\],
