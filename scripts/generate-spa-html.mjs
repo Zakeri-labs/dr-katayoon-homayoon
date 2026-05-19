@@ -1,6 +1,6 @@
 // Generates dist/client/index.html so static hosts (e.g. Vercel) can serve the SPA.
 // TanStack Start's build does not emit a client HTML shell on its own.
-import { readdirSync, writeFileSync, existsSync } from "node:fs";
+import { readdirSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const clientDir = "dist/client";
@@ -21,7 +21,7 @@ if (indexJsFiles.length === 0) {
 }
 // Use the smallest one as the entry (it imports the vendor chunk).
 const entryJs = indexJsFiles
-  .map((f) => ({ f, size: readdirSync(assetsDir, { withFileTypes: false }) && require("node:fs").statSync(join(assetsDir, f)).size }))
+  .map((f) => ({ f, size: statSync(join(assetsDir, f)).size }))
   .sort((a, b) => a.size - b.size)[0].f;
 
 const cssFile = files.find((f) => /\.css$/.test(f));
