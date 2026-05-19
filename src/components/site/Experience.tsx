@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
-import { useT, type TKey } from "@/lib/i18n";
+import { useT, localizeDigits, type TKey } from "@/lib/i18n";
 
 export function Experience() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const steps = [1, 2, 3, 4].map((n) => ({
-    n: String(n).padStart(2, "0"),
+    n: localizeDigits(String(n).padStart(2, "0"), lang),
     t: t(`xp.${n}.t` as TKey),
     d: t(`xp.${n}.d` as TKey),
   }));

@@ -192,9 +192,15 @@
   html[lang="fa"] h1 .italic, html[lang="fa"] h2 .italic,
   html[lang="ar"] h1 .italic, html[lang="ar"] h2 .italic { font-weight: 800; }
 
-  /* .font-display on small labels, numerals, pills → use body font (cleaner at small sizes) */
-  html[lang="fa"] .font-display { font-family: var(--font-fa); font-weight: 600; letter-spacing: 0; font-style: normal; font-feature-settings: "ss01"; }
-  html[lang="ar"] .font-display { font-family: var(--font-ar); font-weight: 700; letter-spacing: 0; font-style: normal; }
+  /* .font-display in fa/ar → YekanBakh as well (big section titles, blockquotes, numerals) */
+  html[lang="fa"] .font-display, html[lang="fa"] .font-display * {
+    font-family: var(--font-fa-display); font-weight: 700; letter-spacing: 0; font-style: normal; line-height: 1.5;
+  }
+  html[lang="ar"] .font-display, html[lang="ar"] .font-display * {
+    font-family: var(--font-ar-display); font-weight: 700; letter-spacing: 0; font-style: normal; line-height: 1.5;
+  }
+  html[lang="fa"] .font-display.text-xs, html[lang="fa"] .font-display.text-sm,
+  html[lang="ar"] .font-display.text-xs, html[lang="ar"] .font-display.text-sm { font-weight: 600; line-height: 1.6; }
 
   /* RTL adjustments */
   html[dir="rtl"] .tracking-\[0\.3em\],
