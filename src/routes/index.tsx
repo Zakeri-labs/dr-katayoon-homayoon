@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500;600&family=Vazirmatn:wght@300;400;500;600&family=Gulzar&family=Tajawal:wght@300;400;500;700&family=Reem+Kufi:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500;600&family=Vazirmatn:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Markazi+Text:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap",
       },
     ],
   }),
