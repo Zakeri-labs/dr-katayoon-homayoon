@@ -99,6 +99,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  // In a pure client-side SPA build (Vercel), the index.html already provides
+  // <html><head><body>, so we must NOT render another <html> shell inside #root.
+  if (typeof window !== "undefined" && !document.documentElement.hasAttribute("data-tss-ssr")) {
+    return <>{children}</>;
+  }
   return (
     <html lang="en">
       <head>
