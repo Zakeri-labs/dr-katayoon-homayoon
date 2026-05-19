@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useT } from "@/lib/i18n";
+import portrait from "@/assets/dr-katayoon-portrait.jpg";
 
 type Phase = "hidden" | "expanded" | "pill";
 
-const PORTRAIT =
-  "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80";
+const PORTRAIT = portrait;
 const WHATSAPP = "https://wa.me/971000000000";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
