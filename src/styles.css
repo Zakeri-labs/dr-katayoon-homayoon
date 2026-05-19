@@ -2,15 +2,47 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("/fonts/YekanBakh-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("/fonts/YekanBakh-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("/fonts/YekanBakh-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("/fonts/YekanBakh-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-display: "Fraunces", "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-fa: "Vazirmatn", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-fa-display: "Markazi Text", "Vazirmatn", ui-serif, Georgia, serif;
+  --font-fa-display: "Yekan Bakh", "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
   --font-ar: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-ar-display: "Amiri", "Markazi Text", "Tajawal", ui-serif, Georgia, serif;
+  --font-ar-display: "Yekan Bakh", "Tajawal", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -137,12 +169,12 @@
   /* Persian typography */
   html[lang="fa"] body { font-family: var(--font-fa); }
   html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4, html[lang="fa"] .font-display {
-    font-family: var(--font-fa-display); font-weight: 500; letter-spacing: 0; line-height: 1.15;
+    font-family: var(--font-fa-display); font-weight: 800; letter-spacing: 0; line-height: 1.18;
   }
   /* Arabic typography */
   html[lang="ar"] body { font-family: var(--font-ar); }
   html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] .font-display {
-    font-family: var(--font-ar-display); font-weight: 400; letter-spacing: 0; line-height: 1.2;
+    font-family: var(--font-ar-display); font-weight: 700; letter-spacing: 0; line-height: 1.2;
   }
   /* RTL adjustments */
   html[dir="rtl"] .tracking-\[0\.3em\],
