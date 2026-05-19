@@ -18,7 +18,7 @@ export function Expertise() {
         <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-border md:grid-cols-3">
           {keys.map((k, i) => (
             <Reveal key={k} as="li" delay={(i % 3) * 0.06} className="group relative cursor-default bg-background p-8 transition-colors hover:bg-card">
-              <span className="absolute end-6 top-6 font-display text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+              <span className="absolute end-6 top-6 font-display text-xs text-muted-foreground">{localizeDigits(String(i + 1).padStart(2, "0"), lang)}</span>
               <p className="font-display text-2xl text-foreground">{t(k)}</p>
               <p className="mt-2 text-sm text-muted-foreground">{t("exp.note")}</p>
               <span className="mt-6 inline-block h-px w-8 bg-bronze transition-all duration-500 group-hover:w-16" />
