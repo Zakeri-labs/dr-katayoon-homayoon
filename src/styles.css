@@ -166,31 +166,35 @@
   }
   h1, h2, h3, h4, .font-display { font-family: var(--font-display); font-weight: 300; letter-spacing: -0.02em; }
 
-  /* Persian / Arabic typography — YekanBakh tiered weights */
+  /* Persian / Arabic typography */
   html[lang="fa"] body { font-family: var(--font-fa); }
   html[lang="ar"] body { font-family: var(--font-ar); }
 
-  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4, html[lang="fa"] .font-display,
-  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] .font-display {
+  /* True headlines use YekanBakh; smaller display labels & numerals use Vazirmatn/Tajawal */
+  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4,
+  html[lang="fa"] h1 *, html[lang="fa"] h2 *, html[lang="fa"] h3 *, html[lang="fa"] h4 * {
+    font-family: var(--font-fa-display);
     letter-spacing: 0;
-    line-height: 1.5;
     font-style: normal;
   }
-  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4,
-  html[lang="fa"] h1 *, html[lang="fa"] h2 *, html[lang="fa"] h3 *, html[lang="fa"] h4 *,
-  html[lang="fa"] .font-display { font-family: var(--font-fa-display); }
   html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4,
-  html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *, html[lang="ar"] h4 *,
-  html[lang="ar"] .font-display { font-family: var(--font-ar-display); }
+  html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *, html[lang="ar"] h4 * {
+    font-family: var(--font-ar-display);
+    letter-spacing: 0;
+    font-style: normal;
+  }
 
-  /* Weight tiers — large display → ExtraBold/Bold, small labels → SemiBold */
-  html[lang="fa"] h1, html[lang="ar"] h1 { font-weight: 800; line-height: 1.35; }
-  html[lang="fa"] h2, html[lang="ar"] h2 { font-weight: 700; line-height: 1.4; }
-  html[lang="fa"] h3, html[lang="ar"] h3 { font-weight: 700; line-height: 1.45; }
-  html[lang="fa"] h4, html[lang="ar"] h4 { font-weight: 600; line-height: 1.5; }
-  html[lang="fa"] .font-display, html[lang="ar"] .font-display { font-weight: 600; }
-  html[lang="fa"] h1 .italic, html[lang="fa"] h2 .italic, html[lang="fa"] h3 .italic,
-  html[lang="ar"] h1 .italic, html[lang="ar"] h2 .italic, html[lang="ar"] h3 .italic { font-weight: 800; }
+  /* Weight tiers — softer, more elegant than ExtraBold */
+  html[lang="fa"] h1, html[lang="ar"] h1 { font-weight: 700; line-height: 1.5; }
+  html[lang="fa"] h2, html[lang="ar"] h2 { font-weight: 700; line-height: 1.5; }
+  html[lang="fa"] h3, html[lang="ar"] h3 { font-weight: 600; line-height: 1.55; }
+  html[lang="fa"] h4, html[lang="ar"] h4 { font-weight: 600; line-height: 1.6; }
+  html[lang="fa"] h1 .italic, html[lang="fa"] h2 .italic,
+  html[lang="ar"] h1 .italic, html[lang="ar"] h2 .italic { font-weight: 800; }
+
+  /* .font-display on small labels, numerals, pills → use body font (cleaner at small sizes) */
+  html[lang="fa"] .font-display { font-family: var(--font-fa); font-weight: 600; letter-spacing: 0; font-style: normal; font-feature-settings: "ss01"; }
+  html[lang="ar"] .font-display { font-family: var(--font-ar); font-weight: 700; letter-spacing: 0; font-style: normal; }
 
   /* RTL adjustments */
   html[dir="rtl"] .tracking-\[0\.3em\],
