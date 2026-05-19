@@ -71,9 +71,9 @@ export function Story() {
         </div>
 
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
-          <motion.div style={{ rotate: useTransform(scrollYProgress, [0, 1], [15, -20]), scale }} className="relative mx-auto aspect-square w-full max-w-md">
+          <div className="relative mx-auto aspect-square w-full max-w-md">
             <OrganVideo src={digestVideo.url} label="Digestion visualization" />
-          </motion.div>
+          </div>
           <Reveal>
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.chD.k")}</p>
             <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.02] text-ivory">
