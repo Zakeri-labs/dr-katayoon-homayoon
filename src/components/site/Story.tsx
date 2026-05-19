@@ -60,7 +60,7 @@ export function Story() {
 
         <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
           <motion.div style={{ rotate, scale }} className="relative mx-auto aspect-square w-full max-w-md md:order-2">
-            <LiverGlow />
+            <OrganVideo src={liverVideo.url} label="Liver visualization" />
           </motion.div>
           <Reveal className="md:order-1">
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.ch2.k")}</p>
