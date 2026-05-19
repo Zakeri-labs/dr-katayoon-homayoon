@@ -73,6 +73,23 @@ export function Story() {
           </Reveal>
         </div>
 
+        <div className="mt-40 grid items-center gap-16 md:grid-cols-2">
+          <motion.div style={{ rotate: useTransform(scrollYProgress, [0, 1], [15, -20]), scale }} className="relative mx-auto aspect-square w-full max-w-md">
+            <OrganVideo src={digestVideo.url} label="Digestion visualization" />
+          </motion.div>
+          <Reveal>
+            <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.chD.k")}</p>
+            <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.02] text-ivory">
+              {t("story.chD.t1")}
+              <br />
+              <span className="italic text-gold">{t("story.chD.t2")}</span>
+            </h3>
+            <p className="mt-8 max-w-md text-pretty text-ivory/70">{t("story.chD.p")}</p>
+          </Reveal>
+        </div>
+
+
+
         <div className="mt-40">
           <Reveal>
             <p className="mb-5 text-xs uppercase tracking-[0.3em] text-gold">{t("story.ch3.k")}</p>
