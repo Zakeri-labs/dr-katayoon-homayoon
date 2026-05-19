@@ -91,6 +91,17 @@ export const dict = {
     ar: "يتطور الكبد الدهني بصمت. الفيبروسكان والفحوصات الأيضية تمنحك صورة مبكرة وواضحة — قبل ظهور أي أعراض بوقت طويل.",
   },
 
+  "story.chD.k": { en: "Chapter 02.5 · Digestion", fa: "فصل ۰۲٫۵ · گوارش", ar: "الفصل 02.5 · الهضم" },
+  "story.chD.t1": { en: "Digestion is the rhythm", fa: "گوارش، ریتمِ", ar: "الهضم هو إيقاع" },
+  "story.chD.t2": { en: "of everyday vitality.", fa: "سرزندگی روزمره است.", ar: "الحيوية اليومية." },
+  "story.chD.p": {
+    en: "From reflux to bloating, gut health quietly shapes how you feel each day. Advanced endoscopy, microbiome insight and tailored care restore balance — gently and precisely.",
+    fa: "از رفلاکس تا نفخ، سلامت گوارش به‌آرامی شکل‌دهنده احساس روزانه شماست. آندوسکوپی پیشرفته، شناخت میکروبیوم و مراقبت اختصاصی، تعادل را با ظرافت و دقت بازمی‌گردانند.",
+    ar: "من الارتجاع إلى الانتفاخ، تُشكّل صحة الأمعاء بهدوء شعورك اليومي. التنظير المتقدم وفهم الميكروبيوم والرعاية المخصّصة تُعيد التوازن بلطف ودقّة.",
+  },
+
+
+
   "story.ch3.k": { en: "Chapter 03 · Prevention", fa: "فصل ۰۳ · پیشگیری", ar: "الفصل 03 · الوقاية" },
   "story.ch3.t1": { en: "Colonoscopy, reimagined as", fa: "کولونوسکوپی، بازآفرینی‌شده به‌عنوان", ar: "تنظير القولون، أعيد تصوّره بوصفه" },
   "story.ch3.t2": { en: " executive longevity care.", fa: " مراقبت طول عمر مدیران.", ar: " رعاية طول العمر للمديرين." },
