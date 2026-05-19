@@ -11,18 +11,21 @@ if (!existsSync(assetsDir)) {
   process.exit(1);
 }
 
+import { readFileSync } from "node:fs";
+
 const files = readdirSync(assetsDir);
 
-// Find the entry JS (small index-*.js that imports the big vendor chunk).
+// Find the entry JS — the one that actually calls hydrateRoot/createRoot.
 const indexJsFiles = files.filter((f) => /^index-.*\.js$/.test(f));
 if (indexJsFiles.length === 0) {
   console.error("[generate-spa-html] no index-*.js entry found");
   process.exit(1);
 }
-// Use the smallest one as the entry (it imports the vendor chunk).
-const entryJs = indexJsFiles
-  .map((f) => ({ f, size: statSync(join(assetsDir, f)).size }))
-  .sort((a, b) => a.size - b.size)[0].f;
+const entryJs =
+  indexJsFiles.find((f) => {
+    const src = readFileSync(join(assetsDir, f), "utf8");
+    return /hydrateRoot\s*\(\s*document|createRoot\s*\(\s*document/.test(src);
+  }) ?? indexJsFiles[0];
 
 const cssFile = files.find((f) => /\.css$/.test(f));
 
