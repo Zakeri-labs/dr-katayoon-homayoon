@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useT } from "@/lib/i18n";
+import { MessageCircle, Phone } from "lucide-react";
+
 
 export function Booking() {
   const [sent, setSent] = useState(false);
@@ -22,20 +24,31 @@ export function Booking() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-10 space-y-3">
-              <a href="https://wa.me/971000000000" className="flex items-center justify-between rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-5 transition-colors hover:bg-ivory/10">
-                <span>
-                  <span className="block text-xs uppercase tracking-[0.25em] text-gold">{t("bk.fastest")}</span>
-                  <span className="mt-1 block font-display text-xl text-ivory">{t("bk.wa")}</span>
+              <a href="https://wa.me/971000000000" className="group flex items-center justify-between gap-4 rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-5 transition-colors hover:bg-ivory/10">
+                <span className="flex items-center gap-4">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gold/15 text-gold transition-transform group-hover:scale-110">
+                    <MessageCircle className="h-5 w-5" strokeWidth={1.6} />
+                  </span>
+                  <span>
+                    <span className="block text-xs uppercase tracking-[0.25em] text-gold">{t("bk.fastest")}</span>
+                    <span className="mt-1 block font-display text-xl text-ivory">{t("bk.wa")}</span>
+                  </span>
                 </span>
                 <span className="text-ivory/60 rtl:rotate-180">→</span>
               </a>
-              <a href="tel:+971000000000" className="flex items-center justify-between rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-5 transition-colors hover:bg-ivory/10">
-                <span>
-                  <span className="block text-xs uppercase tracking-[0.25em] text-gold">{t("bk.direct")}</span>
-                  <span className="mt-1 block font-display text-xl text-ivory">{t("bk.call")}</span>
+              <a href="tel:+971000000000" className="group flex items-center justify-between gap-4 rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-5 transition-colors hover:bg-ivory/10">
+                <span className="flex items-center gap-4">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gold/15 text-gold transition-transform group-hover:scale-110">
+                    <Phone className="h-5 w-5" strokeWidth={1.6} />
+                  </span>
+                  <span>
+                    <span className="block text-xs uppercase tracking-[0.25em] text-gold">{t("bk.direct")}</span>
+                    <span className="mt-1 block font-display text-xl text-ivory">{t("bk.call")}</span>
+                  </span>
                 </span>
                 <span className="text-ivory/60 rtl:rotate-180">→</span>
               </a>
+
             </div>
           </Reveal>
         </div>

@@ -1,14 +1,18 @@
 import { Reveal } from "./Reveal";
 import { useT, type TKey } from "@/lib/i18n";
+import { Compass, Gem, ShieldPlus, Crown, Check, type LucideIcon } from "lucide-react";
+
+const PROGRAM_ICONS: LucideIcon[] = [Compass, Gem, ShieldPlus, Crown];
 
 export function Programs() {
   const { t } = useT();
-  const programs = [1, 2, 3, 4].map((n) => ({
+  const programs = [1, 2, 3, 4].map((n, i) => ({
     tag: t(`prog.${n}.tag` as TKey),
     name: t(`prog.${n}.name` as TKey),
     price: t(`prog.${n}.price` as TKey),
     desc: t(`prog.${n}.desc` as TKey),
     points: [t(`prog.${n}.p1` as TKey), t(`prog.${n}.p2` as TKey), t(`prog.${n}.p3` as TKey), t(`prog.${n}.p4` as TKey)],
+    Icon: PROGRAM_ICONS[i],
   }));
 
   return (
@@ -29,16 +33,25 @@ export function Programs() {
           {programs.map((p, i) => (
             <Reveal key={p.name} delay={(i % 2) * 0.1}>
               <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-luxe transition-transform hover:-translate-y-1 md:p-10">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-bronze/10 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
+                />
                 <div className="mb-8 flex items-center justify-between">
                   <span className="rounded-full border border-bronze/40 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-bronze">{p.tag}</span>
                   <span className="text-xs text-muted-foreground">{p.price}</span>
                 </div>
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-bronze/30 bg-bronze/5 text-bronze transition-transform duration-500 group-hover:scale-110">
+                  <p.Icon className="h-6 w-6" strokeWidth={1.5} />
+                </div>
                 <h3 className="font-display text-3xl text-foreground md:text-4xl">{p.name}</h3>
                 <p className="mt-4 text-pretty text-muted-foreground">{p.desc}</p>
-                <ul className="mt-8 space-y-2.5">
+                <ul className="mt-8 space-y-3">
                   {p.points.map((pt) => (
                     <li key={pt} className="flex items-start gap-3 text-sm">
-                      <span className="mt-2 h-1 w-1 rounded-full bg-bronze" />
+                      <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-bronze/15 text-bronze">
+                        <Check className="h-3 w-3" strokeWidth={2.5} />
+                      </span>
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -55,3 +68,4 @@ export function Programs() {
     </section>
   );
 }
+
