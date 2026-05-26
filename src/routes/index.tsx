@@ -12,6 +12,10 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Booking } from "@/components/site/Booking";
 import { Location } from "@/components/site/Location";
 import { Footer } from "@/components/site/Footer";
+import { ImageBand } from "@/components/site/ImageBand";
+import drListening from "@/assets/dr-listening.jpg";
+import drWindow from "@/assets/dr-window.jpg";
+import drNotes from "@/assets/dr-notes.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
