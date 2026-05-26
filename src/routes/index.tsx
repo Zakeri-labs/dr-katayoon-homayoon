@@ -58,10 +58,34 @@ function Index() {
       <Atelier />
       <Story />
       <Expertise />
+      <ImageBand
+        src={drListening}
+        alt="Dr. Katayoon Homayoon listening to a patient"
+        kicker="In session"
+        caption="Every consultation begins with listening — carefully, without rushing."
+        align="left"
+        aspect="square"
+      />
       <Programs />
       <Experience />
+      <ImageBand
+        src={drWindow}
+        alt="Dr. Katayoon Homayoon reviewing notes by a window overlooking Dubai"
+        kicker="Between patients"
+        caption="A quiet moment of reflection above the city she has practiced in for two decades."
+        align="right"
+        aspect="ultrawide"
+      />
       <Insights />
       <Testimonials />
+      <ImageBand
+        src={drNotes}
+        alt="Dr. Katayoon Homayoon writing clinical notes"
+        kicker="Considered care"
+        caption="Detailed notes, individualized plans — medicine practiced one patient at a time."
+        align="center"
+        aspect="wide"
+      />
       <Booking />
       <Location />
       <Footer />
